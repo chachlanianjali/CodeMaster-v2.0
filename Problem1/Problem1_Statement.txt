@@ -1,4 +1,6 @@
-# A Perfect Layout
+A Perfect Layout
+
+================================================================================================================================================================
 
 Smart phones change a lot of things around, almost everything!
 
@@ -9,9 +11,20 @@ Hey, I know we have a better way to write a message nowadays. But why not give a
 
 For example, classic keypad look like below,
 
-![alt text](keypad.png "Keypad")
++------+-----+------+
+|   1  |  2  |   3  |
+|   ~  | abc |  def |
++------+-----+------+
+|   4  |  5  |   6  |
+|  ghi | jkl |  mno |
++------+-----+------+
+|   7  |  8  |   9  |
+| pqrs | tuv | wxyz |
++------+-----+------+
+|  * + | 0 _ |  # ^ |
++------+-----+------+
 
-so for typing a simple word like **"fine"**,
+so for typing a simple word like "fine",
 I need to press "3" three times, followed by "4" three times, then "6" two times and finally "3" two times! So in total for four letter word like "fine", my total key press count is 10. That's not cool.      
 
 So what can be the solution? the main thing is, we need to come with better letter placement so that key presses can be minimized.
@@ -19,33 +32,33 @@ So what can be the solution? the main thing is, we need to come with better lett
 Saying so, I will provide you the number of keys on the keypad, how many letters can come on one key, number of letters in language as we are not limited to English and lastly count of each letter in the message.
 Few rules here, you can place any letter on any key and may in any order, but only once. You can't use the same letter twice.
 
-## Input
+Input
 
-The first line gives the number of messages in total, **M**. **M** messages follow.
+The first line gives the number of messages in total, M. M messages follow.
 
 For each message, there are two lines of input, 
-1st line of input consists of maximum count of a letter that can come on one key (**MX**), a total number of keys on the keypad (**K**) and lastly the number of letters in the language (**L**).
-2nd line of input consists of a count of each letter in the message (**C**)
+1st line of input consists of maximum count of a letter that can come on one key (MX), a total number of keys on the keypad (K) and lastly the number of letters in the language (L).
+2nd line of input consists of a count of each letter in the message (C)
 
-## Output
+Output
 
-For message, output one line containing "**Message-MN: KP**",
+For message, output one line containing "Message-MN: KP",
 
-Where **MN** is Message number, and **KP** is the minimum number of key presses with optimized keypad layout.
+Where MN is Message number, and KP is the minimum number of key presses with optimized keypad layout.
 
 
-### Sample Input
-```
+================================================================================================================================================================
+
+Sample Input
+
 2
 4 2 8
 5 2 5 2 4 1 3 6
 3 8 20
 1 1 1 100 100 1 1 1 1 1 1 10 11 11 11 11 1 1 1 100
-```
 
-### Sample Output
 
-```
+Sample Output
+
 Message-1: 56
 Message-2: 382
-```
