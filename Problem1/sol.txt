@@ -1,0 +1,104 @@
+package com.company;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import static java.lang.Math.ceil;
+import static java.lang.Math.round;
+
+class ReadFile {
+    public static void main(String[] args) {
+        BufferedReader reader;
+        try {
+            int noMsg;
+            reader = new BufferedReader(new FileReader(
+                    "input.txt"));
+            String line = reader.readLine();
+            int msg = Integer.valueOf(line);
+
+            int mxLtr;
+            Double mxButtonD;
+            int mxButton;
+            int langChar;
+
+
+            for (int ii = 0; ii < msg; ii++) {
+                line = reader.readLine();
+                System.out.println(line + " ----1");
+                String[] line1 = line.split(" ");
+                mxLtr = Integer.valueOf(line1[0]);
+                mxButton = Integer.valueOf(line1[1]);
+                mxButtonD = Double.valueOf(line1[1]);
+                langChar = Integer.valueOf(line1[2]);
+                line = reader.readLine();
+                String[] line2 = line.split(" ");
+                System.out.println(line + " ----2");
+
+                List<List> noButton = new ArrayList<List>();
+                System.out.println("mxLtr" + mxLtr);
+                System.out.println("mxButton" + mxButton);
+                System.out.println("langChar" + langChar);
+                ArrayList decMsg = new ArrayList();
+                decMsg.addAll(Arrays.asList(line2));
+                Collections.sort(decMsg, Collections.reverseOrder());
+                int cnt = 0;
+                int output=0;
+                int no ;
+                int index = 1;
+                int loop;
+
+                System.out.println("***888888888888888888888888888"+((decMsg.size())));
+                System.out.println("***888888888888888888888888888::"+Math.ceil((decMsg.size())/mxButtonD));
+                loop = (int) Math.ceil((decMsg.size())/mxButtonD);
+                System.out.println("***888888888888888888888888888::"+loop);
+
+                for (int j = 0; j < (loop ); j++) {
+
+                                System.out.println("decMsg" + decMsg);
+                                System.out.println(j + "---" + line2[j] + "");
+                                System.out.println("cnt---" + cnt + "---decMsg.get(cnt)" + decMsg.get(j));
+
+
+                                for (int i = 0; i < mxButton; i++) {
+                                    if(cnt == decMsg.size() ){
+                                        break;
+                                    }
+                                    System.out.println("**i" + i);
+                                    System.out.println("**cnt" + cnt);
+                                    no = Integer.valueOf(decMsg.get(cnt).toString());
+                                    if (cnt < mxButton) {
+                                        noButton.add(new ArrayList());
+                                        noButton.get(i).add(no);
+                        } else {
+                            noButton.get(i).add(no);
+                        }
+                        output = output+((index)* no);
+                        cnt++;
+
+                    }
+                    index++;
+
+                }
+
+
+                System.out.println("**********************************output" + noButton);
+                System.out.println("**********************************output" +  output);
+
+
+
+            }
+
+
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
