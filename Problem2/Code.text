@@ -1,0 +1,108 @@
+create or replace procedure file_handle_proc
+as
+v_first_line   varchar2(4096);
+fhandle1 UTL_FILE.FILE_TYPE;
+fhandle2 UTL_FILE.FILE_TYPE;
+sql_stmt  varchar2(200);
+s varchar2(20);
+p varchar2(20);
+c varchar2(20);
+var1 number:=0;
+var2 number:=0;
+type arr is table of number index by pls_integer;
+arr1 arr;
+v_temp number;
+j number;
+valperthtr  number:=0;
+v_str   varchar2(4976);
+v_str1   varchar2(4976);
+begin
+
+fhandle1:= UTL_FILE.fopen('YATTI_DIR','Problem2_input.txt','R');
+utl_file.get_line(fhandle1,v_first_line);
+
+dbms_output.put_line('first Line- '||v_first_line);
+
+
+for l in 1..v_first_line
+loop
+s:=0;
+p:=0;
+c:=0;
+utl_file.get_line(fhandle1,v_str);
+dbms_output.put_line('v_str - '||v_str);
+
+select substr('v_str',1,instr('v_str',' ',1,1)-1) INTO s
+from dual;
+
+select substr('v_str',instr('v_str',' ',1,1)+1,instr('v_str',' ',1,2)-instr('v_str',' ',1,1)-1) INTO P
+from dual;
+
+dbms_output.put_line('s = '||s||' p = '||p);
+
+
+utl_file.get_line(fhandle1,v_str1);
+dbms_output.put_line('v_str - '||v_str1);
+
+
+arr1(1):=2;
+arr1(2):=4;
+arr1(3):=2;
+arr1(4):=3;
+arr1(5):=4;
+arr1(6):=2;
+arr1(7):=1;
+arr1(8):=2;
+arr1(9):=1;
+arr1(10):=3;
+for i in 1..arr1.count
+loop
+dbms_output.put_line(arr1(i)||' ');
+end loop;
+
+
+dbms_output.put_line('---------------------');
+
+for i in 1..s
+loop
+
+j:=1;
+var1:=arr1(1);
+loop
+exit when var1>5;
+var2:=arr1(j+1);
+var1:=var1+var2;
+j:=j+1;
+end loop;
+var1:=var1-var2;
+valperthtr:=valperthtr+var1;
+
+dbms_output.put_line('var1 = '||var1);
+
+for i in 1..j-1
+loop
+v_temp:=arr1(1);
+for k in 1..arr1.count-1
+loop
+arr1(k):=arr1(k+1);
+end loop;
+
+arr1(c):=v_temp;
+end loop;
+
+for i in 1..arr1.count
+loop
+dbms_output.put_line(arr1(i)||' ');
+end loop;
+
+--sql_stmt:='Hello CodeMaster';
+--fhandle2:=UTL_FILE.fopen('YATTI_DIR','README2.text','W');
+--utl_file.put_line(fhandle2,sql_stmt);
+--utl_file.fclose(fhandle2);
+end loop;
+dbms_output.put_line('theater - '||l||' '||valperthtr*10);
+
+end loop;
+utl_file.fclose(fhandle1);
+
+end;
