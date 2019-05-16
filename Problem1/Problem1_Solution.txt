@@ -1,0 +1,97 @@
+using System;
+using System.Text.RegularExpressions;
+					
+public class Program
+{
+	public static void Main()
+	{
+		String inputString1,inputString2,resultString;			
+		int [ ] input = new   int [3]; 
+		int [ ] input2 = new   int [500];
+		int k=0;int o=0;
+		Console.WriteLine("Enter input Line 1");
+		inputString1=Console.ReadLine();
+		Console.WriteLine("Enter input Line 2");
+		inputString2=Console.ReadLine();
+				
+		string[] numbers= Regex.Split(inputString1, @"\D+"); 
+ 
+
+		foreach (string value in numbers)
+{
+    if (!string.IsNullOrEmpty(value))
+    {
+    int i = int.Parse(value);
+    
+		input[k]=i;
+		k++;
+    }		
+				
+} 
+		//Console.WriteLine(input[0]);
+//Console.WriteLine(input[1]);
+		//Console.WriteLine(input[2]);
+		
+	
+//input digits per key(d) column
+//input total number of keys(k) = no. of arrays 
+//input total number of letters= L 
+					
+		string[] numbers2= Regex.Split(inputString2, @"\D+"); 
+ 
+
+		foreach (string value in numbers2)
+{
+    if (!string.IsNullOrEmpty(value))
+    {
+    int i = int.Parse(value);
+		
+    
+		input2[o]=i;
+		//Console.WriteLine(input2[o]);
+		o++;
+		
+		
+    }		
+		
+		
+	}
+		Array.Sort(input2);
+	    Array.Reverse(input2);	
+		int [,] solutionArray = new int [50,50]; 
+		int a=0, b=0,c=0;
+ 	
+	
+	//		for (a=0;a<=4;a++)
+	//		{
+	//			for(b=0;b<=2;b++)
+	//			{
+	//				solutionArray[b,a]=input2[c];
+	//				c++;					
+	//	}
+	//			
+	//		}
+		int g=1,sum=0;
+		c=0;
+		for(int i=0;i <input[0];i++)
+		{
+			for(int j=0;j<input[1];j++)
+			{
+			sum+=(input2[c]*g);
+				Console.WriteLine(sum);
+			c++;
+				
+			}
+			g++;
+		}
+		Console.WriteLine(sum);
+	
+		
+
+		
+		
+}
+
+	
+	
+}
