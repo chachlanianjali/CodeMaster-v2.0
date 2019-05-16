@@ -4,9 +4,9 @@ v_first_line   varchar2(4096);
 fhandle1 UTL_FILE.FILE_TYPE;
 fhandle2 UTL_FILE.FILE_TYPE;
 sql_stmt  varchar2(200);
-s varchar2(20);
-p varchar2(20);
-c varchar2(20);
+s number:=5;
+p number:=5;
+c number:=10;
 var1 number:=0;
 var2 number:=0;
 type arr is table of number index by pls_integer;
@@ -26,20 +26,9 @@ dbms_output.put_line('first Line- '||v_first_line);
 
 for l in 1..v_first_line
 loop
-s:=0;
-p:=0;
-c:=0;
+
 utl_file.get_line(fhandle1,v_str);
 dbms_output.put_line('v_str - '||v_str);
-
-select substr('v_str',1,instr('v_str',' ',1,1)-1) INTO s
-from dual;
-
-select substr('v_str',instr('v_str',' ',1,1)+1,instr('v_str',' ',1,2)-instr('v_str',' ',1,1)-1) INTO P
-from dual;
-
-dbms_output.put_line('s = '||s||' p = '||p);
-
 
 utl_file.get_line(fhandle1,v_str1);
 dbms_output.put_line('v_str - '||v_str1);
