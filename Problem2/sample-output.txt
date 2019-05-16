@@ -1,0 +1,3 @@
+Theater- 1: 200
+Theater- 2: 90
+Theater- 3: 1000
