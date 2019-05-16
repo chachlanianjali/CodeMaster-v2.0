@@ -30,10 +30,8 @@ public class TheaterDemo {
 				for (int queueCounter = 0; queueCounter < queueData.length; queueCounter++) {
 					theater.getQueue().add(Integer.parseInt(queueData[queueCounter]));
 				}
-
-				// calculateEarning(theaterList);
 			}
-			System.out.println(theaterList);
+
 			calculateEarning(theaterList);
 		} catch (IOException e) {
 			System.err.format("IOException: %s%n", e);
@@ -42,7 +40,7 @@ public class TheaterDemo {
 	}
 
 	public static void calculateEarning(List<Theater> theaterList) {
-		
+
 		int counter = 1;
 		for (Theater theater : theaterList) {
 			int totalEarnings = 0;
@@ -52,13 +50,13 @@ public class TheaterDemo {
 				int totalnumberOfMemebers = 0;
 				queue.add(totalnumberOfMemebers);
 				int capacity = theater.getSittingCapacity();
-			
-				while(totalnumberOfMemebers < capacity) {
-					int currentelement =  queue.poll();
-					totalnumberOfMemebers +=  currentelement;
+
+				while (totalnumberOfMemebers < capacity) {
+					int currentelement = queue.poll();
+					totalnumberOfMemebers += currentelement;
 					queue.add(currentelement);
 				}
-				
+
 				totalEarnings += totalnumberOfMemebers * 10;
 			}
 
