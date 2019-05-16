@@ -11,7 +11,7 @@ object Solution {
       val numberOfShows = inputData.head.split(" ").head.toInt
       val familyList = ListBuffer(inputData.last.split(" ").map(_.toInt): _ *)
       var totalFamilyMembers = 0
-      for (i <- 1 to numberOfShows) {
+      for (i <- 1 to numberOfShows if familyList(0) <= inputData.head.split(" ")(1).toInt) {
         var theaterCapacity = inputData.head.split(" ")(1).toInt
           var familyCounter = 0
           for (k <- 0 until familyList.size if familyList(0) <= theaterCapacity){
