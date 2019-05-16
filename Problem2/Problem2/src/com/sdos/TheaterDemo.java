@@ -10,8 +10,7 @@ import java.util.Queue;
 
 public class TheaterDemo {
 	public static void main(String[] args) {
-		try (BufferedReader br = Files
-				.newBufferedReader(Paths.get("C:\\a602289\\coding-competition\\Problem2\\input\\input.txt"))) {
+		try (BufferedReader br = Files.newBufferedReader(Paths.get(args[0]))) {
 			List<Theater> theaterList = new ArrayList<>();
 
 			int numberOftheaters = Integer.parseInt(br.readLine());
@@ -48,16 +47,21 @@ public class TheaterDemo {
 			for (int showCounter = 1; showCounter <= theater.getNumberOfShows(); showCounter++) {
 
 				int totalnumberOfMemebers = 0;
-				queue.add(totalnumberOfMemebers);
+				// queue.add(totalnumberOfMemebers);
 				int capacity = theater.getSittingCapacity();
+				int noOfFamilies = theater.getNumberOfFamilies();
 
-				while (totalnumberOfMemebers < capacity) {
-					int currentelement = queue.poll();
-					totalnumberOfMemebers += currentelement;
-					queue.add(currentelement);
+				while (totalnumberOfMemebers < capacity && noOfFamilies > totalnumberOfMemebers) {
+					int currentelement = queue.peek();
+					if ((totalnumberOfMemebers + currentelement) <= capacity && noOfFamilies > totalnumberOfMemebers) {
+						totalnumberOfMemebers += currentelement;
+						queue.add(queue.poll());
+					} else {
+						break;
+					}
 				}
 
-				totalEarnings += totalnumberOfMemebers * 10;
+				totalEarnings += (totalnumberOfMemebers * 10);
 			}
 
 			System.out.println("Theater-" + counter + ":" + totalEarnings);
