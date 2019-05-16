@@ -1,0 +1,17 @@
+Theater- 1: 210
+Theater- 2: 1000
+Theater- 3: 200
+Theater- 4: 1500000000
+Theater- 5: 1760000000
+Theater- 6: 70
+Theater- 7: 1000000000
+Theater- 8: 90000
+Theater- 9: 915320
+Theater- 10: 28750
+Theater- 11: 500000
+Theater- 12: 1000000
+Theater- 13: 145760
+Theater- 14: 216630
+Theater- 15: 1887459702
+Theater- 16: 1737459672
+

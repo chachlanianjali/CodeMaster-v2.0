@@ -11,7 +11,9 @@ public class TheaterProfitCalculator {
 
 	public static void main(String args[]) throws FileNotFoundException {
 
-		File text = new File("C:/code/CodeMaster-v2.0/Problem2/sample-input.txt");
+	//	File text = new File("C:/code/CodeMaster-v2.0/Problem2/sample-input.txt");
+	
+		File text = new File("C:/code/CodeMaster-v2.0/Problem2/problem2-input.txt");
 
 		@SuppressWarnings("resource")
 		Scanner scnr = new Scanner(text);
@@ -22,7 +24,9 @@ public class TheaterProfitCalculator {
 		}
 
 		try {
-			FileWriter fw = new FileWriter("C:/code/CodeMaster-v2.0/Problem2/sample-output.txt");
+			//FileWriter fw = new FileWriter("C:/code/CodeMaster-v2.0/Problem2/sample-output.txt");
+			
+			FileWriter fw = new FileWriter("C:/code/CodeMaster-v2.0/Problem2/problem2-output.txt");
 			while (scnr.hasNextLine()) {
 				String lineOfDetails = scnr.nextLine();
 				String[] details = lineOfDetails.split(" ");
@@ -58,6 +62,7 @@ public class TheaterProfitCalculator {
 					showProfit = 10 * noOfpeopleEnterd;
 					theater_profit = theater_profit + showProfit;
 				}
+				System.out.println("Theater- " + thNumber + ": " + theater_profit + "\r\n");
 				fw.write("Theater- " + thNumber + ": " + theater_profit + "\r\n");
 				thNumber++;
 			}
