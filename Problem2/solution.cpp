@@ -6,12 +6,12 @@ int main()
     freopen("input.txt", "r",stdin);
     freopen("output.txt", "w",stdout);
     unsigned int T; cin>>T;
-    unsigned int s, p, fr, val;
-    vector<unsigned int>v;
-    vector<unsigned int>MovieSeen;
+    unsigned long s, p, fr, val;
+    list<unsigned long>v;
+    list<unsigned long>MovieSeen;
     unsigned long long cost = 0;
     const int cCost = 10;  
-    unsigned int rem_cap = 0;
+    unsigned long rem_cap = 0;
     while(T--)
     {
         cost = 0;
@@ -19,7 +19,7 @@ int main()
         MovieSeen.clear();
         s = p = fr = 0;
         cin>>s>>p>>fr;
-        v.reserve(fr);
+        // v.reserve(fr);
         
         while(fr--)
         {
@@ -27,20 +27,22 @@ int main()
             cin>>val;
             v.emplace_back(val);
         }
-
-        for (unsigned int show_cnt = 0; show_cnt < s; ++show_cnt) 
+		while(s--)
         {
-            rem_cap = p;    
-            for (unsigned int pCnt = v[0]; v.size() > 0 && v[0] <= rem_cap;) {
-                pCnt = v[0];
+            rem_cap = p;
+            unsigned long vsize = v.size();
+            for (unsigned long pCnt = v.front();  vsize > 0 && v.front() <= rem_cap;) {
+                pCnt = v.front();
                 rem_cap -= pCnt;
-                v.erase(v.begin());
+                v.pop_front();
+                vsize--;
                 MovieSeen.emplace_back(pCnt);
             }
-            unsigned int size = MovieSeen.size();
+            unsigned long size = MovieSeen.size();
             for(unsigned int i = 0 ; i<size; ++i)
             {
-                v.emplace_back(MovieSeen[i]);
+                v.emplace_back(MovieSeen.front());
+                MovieSeen.pop_front();
             }
             MovieSeen.clear();
             cost = cost + ((p - rem_cap) * cCost);
