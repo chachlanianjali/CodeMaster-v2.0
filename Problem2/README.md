@@ -45,3 +45,4 @@ Theater-1: 200
 Theater-2: 90
 Theater-3: 1000
 ```
+Please run the TheaterDemo.java file and pass the input.txt as argument to the main method.
