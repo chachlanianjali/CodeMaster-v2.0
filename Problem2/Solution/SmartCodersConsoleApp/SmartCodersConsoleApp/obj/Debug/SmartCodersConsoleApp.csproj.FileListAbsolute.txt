@@ -1,0 +1,7 @@
+C:\Deepesh\CodeMaster-v2.0\SmartCodersConsoleApp\SmartCodersConsoleApp\bin\Debug\SmartCodersConsoleApp.exe.config
+C:\Deepesh\CodeMaster-v2.0\SmartCodersConsoleApp\SmartCodersConsoleApp\bin\Debug\SmartCodersConsoleApp.exe
+C:\Deepesh\CodeMaster-v2.0\SmartCodersConsoleApp\SmartCodersConsoleApp\bin\Debug\SmartCodersConsoleApp.pdb
+C:\Deepesh\CodeMaster-v2.0\SmartCodersConsoleApp\SmartCodersConsoleApp\obj\Debug\SmartCodersConsoleApp.csprojAssemblyReference.cache
+C:\Deepesh\CodeMaster-v2.0\SmartCodersConsoleApp\SmartCodersConsoleApp\obj\Debug\SmartCodersConsoleApp.csproj.CoreCompileInputs.cache
+C:\Deepesh\CodeMaster-v2.0\SmartCodersConsoleApp\SmartCodersConsoleApp\obj\Debug\SmartCodersConsoleApp.exe
+C:\Deepesh\CodeMaster-v2.0\SmartCodersConsoleApp\SmartCodersConsoleApp\obj\Debug\SmartCodersConsoleApp.pdb
