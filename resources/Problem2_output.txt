@@ -1,0 +1,14 @@
+Theater-0: 220
+Theater-1: 9220
+Theater-2: 9420
+Theater-3: 9430
+Theater-4: 1890009430
+Theater-5: 1890009520
+Theater-6: -1479957776
+Theater-7: -1479867776
+Theater-8: -1479092556
+Theater-9: -1479065326
+Theater-10: -1478235326
+Theater-11: -1477405326
+Theater-12: -1477238926
+Theater-13: -1476940126
