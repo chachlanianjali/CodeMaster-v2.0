@@ -8,10 +8,10 @@ import java.io.IOException;
 public class CompleteLogic {
 
 	
-	Double getTotalAmount(int shows,int capacity,int families,int[] persons){
+	long getTotalAmount(int shows,int capacity,int families,int[] persons){
 		//System.out.println(shows+" "+capacity+" "+families+" "+persons.length);
 		String [] tempPersons2;
-		Double totAmount = 0.0;
+		long totAmount = 0;
 		String remaingPer = "";
 		int[] tempPersons = persons;
 		
