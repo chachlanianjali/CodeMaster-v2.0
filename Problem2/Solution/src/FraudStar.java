@@ -113,6 +113,7 @@ public class FraudStar {
 			while(familyQueue.peek() <= maxCapacity &&  familyQueue.peek() <= available_seat && familyInQueue>0) {
 				rupees = rupees + familyQueue.peek() * 10;
 				available_seat = available_seat - familyQueue.peek();
+					familyQueue.add(familyQueue.poll());
 				familyInQueue --;
 			}
 			noOfShows --;
